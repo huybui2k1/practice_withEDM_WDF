@@ -15,8 +15,7 @@ namespace ConsoleApp
             Console.Title = "Hogwarts School of Witchcraft and Wizardry";
             using (var context = new UniversityContext())
             {
-                var teachers =
-                context.People.Include("Courses").Include("Department").OfType<Teacher>().ToList();
+                var teachers = context.People.Include("Courses").Include("Department").OfType<Teacher>().ToList();
                 Console.WriteLine("### HOGWARTS STAFF ###");
                 foreach (var t in teachers)
                 {
